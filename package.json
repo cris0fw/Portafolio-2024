@@ -6,8 +6,6 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -26,7 +24,6 @@
     "typescript": "^5.6.2"
   },
   "devDependencies": {
-    "@types/scrollreveal": "^0.0.11",
-    "gh-pages": "^6.1.1"
+    "@types/scrollreveal": "^0.0.11"
   }
 }
