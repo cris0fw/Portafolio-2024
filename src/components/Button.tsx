@@ -6,7 +6,13 @@ const Button = (props: PropsButton) => {
 
   return (
     <button onClick={() => onClick(param)} className={estilosButton}>
-      {icon && <img src={icon} className={estilosImage} alt="Image icon" />}
+      {icon && (
+        <img
+          src={`/portafolio-2024/${icon}`}
+          className={estilosImage}
+          alt="Image icon"
+        />
+      )}
       {title}
     </button>
   );

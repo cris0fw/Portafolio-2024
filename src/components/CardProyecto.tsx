@@ -9,7 +9,7 @@ const CardProyecto = (props: CardProyectsProps) => {
     <div className="proyecto__card w-full max-w-[380px] flex flex-col items-center justify-center bg-black border-solid border-[2px] border-main_celeste rounded-[8px] py-[35px] px-[5px] gap-[7px] text-center cursor-pointer shadow-cardShadow transition duration-300 md:max-w-[100%] mt-10 lg:hover:scale-[1.05] hover:scale-[1] hover:shadow-iconos">
       <img
         className="w-full max-w-[280px] h-auto rounded-[6px] object-cover"
-        src={image}
+        src={`/portafolio-2024/${image}`}
         alt="proyecto"
       />
 
@@ -23,7 +23,7 @@ const CardProyecto = (props: CardProyectsProps) => {
         {iconos.map((icon, index) => (
           <div className="p-2 bg-white rounded-full">
             <img
-              src={icon}
+              src={`/portafolio-2024/${icon}`}
               className="w-6 h-6"
               key={index}
               alt={`icono tecnología ${index + 1}`}
