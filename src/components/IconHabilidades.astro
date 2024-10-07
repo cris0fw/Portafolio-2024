@@ -1,0 +1,9 @@
+---
+    import type { IconHabilidadesProps } from '../types/index'
+    const { image, title } = Astro.props as IconHabilidadesProps
+---
+
+<div class="">
+    <img class="p-2 bg-white rounded-full w-9" src={image} alt="icon habilidad">
+    <p>{title}</p>
+</div>

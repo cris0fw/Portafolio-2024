@@ -1,0 +1,48 @@
+---
+import IconHabilidades from "../components/IconHabilidades.astro";
+
+---
+
+<section class="w-full" id="habilidades">
+    <h2 class="font-semibold text-center home__data">Habili<span class="bg-gradient-to-r from-main_celeste to-[#0057a0] bg-clip-text text-transparent">dades</span></h2>
+
+    <div class="container grid grid-cols-2 mt-5 justify-items-center lg:grid-cols-3 xl:grid-cols-4">
+        <div class="space-y-2 proyecto__card">
+            <h4 class="mb-4 text-2xl font-semibold text-main_celeste">Frontend</h4>
+            <IconHabilidades image="/tecnologys/html.svg" title="Html" />
+            <IconHabilidades image="/tecnologys/typescript.svg" title="Typescript" />
+            <IconHabilidades image="/tecnologys/javascript.svg" title="Javascript" />
+            <IconHabilidades image="/react-2.svg" title="Reactjs" />
+            <IconHabilidades image="/vue-9.svg" title="VueJs" />
+            <IconHabilidades image="/next-js.svg" title="NextJs" />
+        </div>
+
+        <div class="space-y-2 proyecto__card">
+            <h4 class="mb-4 text-2xl font-semibold text-main_celeste">Backend</h4>
+            <IconHabilidades image="/tecnologys/node-js.svg" title="NodeJs" />
+            <IconHabilidades image="/tecnologys/php.svg" title="PHP" />
+            <IconHabilidades image="/tecnologys/spring.svg" title="Spring boot" />
+            <IconHabilidades image="/tecnologys/nestjs.svg" title="NestJs" />
+        </div>
+
+        <div class="space-y-2 proyecto__card">
+            <h4 class="mb-4 text-2xl font-semibold text-main_celeste">CMS</h4>
+            <IconHabilidades image="/wordpress.svg" title="Wordpress" />
+            <IconHabilidades image="/tecnologys/strapi-2.svg" title="Strapi" />
+        </div>
+
+        <div class="space-y-2 proyecto__card">
+            <h4 class="mb-4 text-2xl font-semibold text-main_celeste">Diseño</h4>
+            <IconHabilidades image="/tecnologys/css.svg" title="Css" />
+            <IconHabilidades image="/tecnologys/tailwindcss.svg" title="TaiwindCss" />
+            <IconHabilidades image="/tecnologys/bootstrap.svg" title="Boostrap 5" />
+            <IconHabilidades image="/tecnologys/material-ui.svg" title="Material UL" />
+        </div>
+    </div>
+
+
+    <a href="#" id="scroll-up" class="fixed z-50 inline-block px-3 py-1 text-lg duration-300 rounded-md shadow-sm right-4 bottom-4 bg-main_celeste md:px-4 md:py-2 hover:-translate-y-1">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+</section>
+

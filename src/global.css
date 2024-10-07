@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply tracking-wider text-white bg-black font-poppins;
+}
+
+html {
+  @apply overflow-x-hidden scroll-smooth;
+}
+
+section {
+  @apply py-20 md:py-28;
+}
+
+h1 {
+  @apply text-3xl font-bold md:text-4xl xl:text-5xl;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl xl:text-4xl;
+}
+
+h3 {
+  @apply text-xl md:text-2xl xl:text-3xl;
+}
+
+.active {
+  @apply text-main_celeste;
+}
+
+/* HEADER / NAVBAR */
+.nav-link {
+  position: relative;
+  font-size: 15px;
+  line-height: 1.75rem;
+  font-weight: 300;
+  transition-duration: 300ms;
+}
+
+.nav-link:hover {
+  color: #24ffe5;
+}
+
+.nav-link:hover::after {
+  background-color: #00f6e6;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+}
+
+/* SECTION HOME */
+.btn {
+  @apply px-5 py-2 font-bold duration-300 border rounded-md border-main_celeste bg-main_celeste;
+}
+
+.btn:hover {
+  @apply shadow-botonHover;
+}
+
+.btn_outline {
+  @apply bg-transparent;
+}
+
+.btn_outline:hover {
+  @apply bg-main_celeste;
+}
