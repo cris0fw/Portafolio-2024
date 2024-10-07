@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import CardProyecto from "../components/CardProyecto";
+import CardProyecto from "../components/_CardProyecto";
 import { CardsProyectos } from "../libs/Proyectos";
 import type { ProyectosType } from "../types/index";
-import ContainerFiltrosBotones from "../components/ContainerFiltrosBotones";
-import BotonesPaginacion from "../components/BotonesPaginacion";
+import ContainerFiltrosBotones from "../components/_ContainerFiltrosBotones";
+import BotonesPaginacion from "../components/_BotonesPaginacion";
 import ScrollReveal from "scrollreveal";
 
 const Projects = () => {

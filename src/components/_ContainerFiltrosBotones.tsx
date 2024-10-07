@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../components/Button";
+import Button from "./_Button";
 import type { ContainerFiltersBotones } from "../types/index";
 import { CardsProyectos } from "../libs/Proyectos";
 
