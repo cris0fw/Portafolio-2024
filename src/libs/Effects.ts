@@ -1,5 +1,5 @@
 const navMenu = document.getElementById("nav-menu");
-const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link"); // Tipado correcto
+const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
 const hamburguer = document.getElementById("hamburguer");
 const icon = hamburguer?.querySelector("i");
 const header = document.getElementById("navbar");
@@ -8,6 +8,16 @@ const scrollUpBtn = document.getElementById("scroll-up");
 let lastScrollY = window.scrollY;
 import ScrollReveal from "scrollreveal";
 
+// Función para cerrar el menú
+const closeMenu = () => {
+  navMenu?.classList.remove("left-[0]"); // Cierra el menú
+  if (icon) {
+    icon.classList.remove("ri-close-large-fill");
+    icon.classList.add("ri-menu-line"); // Cambia el ícono de vuelta a "menu"
+  }
+};
+
+// Evento para abrir/cerrar el menú al presionar el ícono de hamburguesa
 hamburguer?.addEventListener("click", () => {
   navMenu?.classList.toggle("left-[0]");
 
@@ -20,6 +30,13 @@ hamburguer?.addEventListener("click", () => {
       icon.classList.add("ri-menu-line");
     }
   }
+});
+
+// Evento para cerrar el menú cuando se hace clic en un enlace
+navLinks.forEach((navLink) => {
+  navLink.addEventListener("click", () => {
+    closeMenu();
+  });
 });
 
 if (header) {

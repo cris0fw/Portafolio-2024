@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CardProyecto from "../components/_CardProyecto";
 import { CardsProyectos } from "../libs/Proyectos";
 import type { ProyectosType } from "../types/index";
@@ -10,6 +10,8 @@ const Projects = () => {
   const [filtered, setFiltered] = useState<ProyectosType[]>(CardsProyectos);
   const [currentProyects, setCurrentProyects] = useState<ProyectosType[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
+
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   const limit = 6;
 
@@ -28,6 +30,8 @@ const Projects = () => {
     const startIndex = currentPage * limit;
     const endIndex = startIndex + limit;
     setCurrentProyects(filtered.slice(startIndex, endIndex));
+
+    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [currentPage, filtered]);
 
   const sr = ScrollReveal({
@@ -41,7 +45,11 @@ const Projects = () => {
   sr.reveal(".proyecto__section");
 
   return (
-    <section id="proyectos" className="px-6 py-20 lg:px-0 bg-bg_negro">
+    <section
+      ref={sectionRef}
+      id="proyectos"
+      className="px-6 py-20 lg:px-0 bg-bg_negro"
+    >
       <h2 className="font-semibold text-center proyecto__section">
         Proy
         <span className="bg-gradient-to-r from-main_celeste to-[#0057a0] bg-clip-text text-transparent">
