@@ -50,7 +50,7 @@ const Projects = () => {
       id="proyectos"
       className="px-6 py-20 lg:px-0 bg-bg_negro"
     >
-      <h2 className="font-semibold text-center proyecto__section">
+      <h2 className="font-semibold text-center proyecto__section subtitle">
         Proy
         <span className="bg-gradient-to-r from-main_celeste to-[#0057a0] bg-clip-text text-transparent">
           ectos

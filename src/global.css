@@ -14,15 +14,15 @@ section {
   @apply py-20 md:py-28;
 }
 
-h1 {
+.title {
   @apply text-3xl font-bold md:text-4xl xl:text-5xl;
 }
 
-h2 {
+.subtitle {
   @apply text-2xl md:text-3xl xl:text-4xl;
 }
 
-h3 {
+.subtitle_encabezado {
   @apply text-xl md:text-2xl xl:text-3xl;
 }
 
