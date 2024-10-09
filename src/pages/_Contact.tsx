@@ -1,24 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import ScrollReveal from "scrollreveal";
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
-
-  useEffect(() => {
-    const sr = ScrollReveal({
-      origin: "bottom",
-      distance: "60px",
-      duration: 600,
-      delay: 300,
-      reset: true,
-    });
-
-    sr.reveal(".contact__title");
-    sr.reveal(".contact__form", { delay: 300 });
-  }, []);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -58,7 +44,11 @@ const Contact = () => {
     <section id="contacto" className="w-full bg-[#101010] py-8">
       <ToastContainer />
       <div className="flex flex-col items-center justify-center mx-auto max-w-[600px] px-4">
-        <h1 className="contact__title text-[35px] mt-5 font-bold text-center">
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className="contact__title text-[35px] mt-5 font-bold text-center"
+        >
           Cont
           <span className="bg-gradient-to-r from-[#24ffe5] to-[#0057a0] bg-clip-text text-transparent">
             acto
@@ -67,6 +57,9 @@ const Contact = () => {
 
         <form
           ref={form}
+          data-aos="flip-down"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-sine"
           onSubmit={sendEmail}
           className="flex flex-col w-full gap-4 mt-6 contact__form"
         >

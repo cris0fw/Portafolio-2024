@@ -3,6 +3,7 @@ import "../global.css"
 import type {PropsLayouts} from "../types/index"
 import 'remixicon/fonts/remixicon.css'
 const { title } = Astro.props as PropsLayouts;
+import 'aos/dist/aos.css'; 
 ---
 
 <!doctype html>
@@ -17,15 +18,19 @@ const { title } = Astro.props as PropsLayouts;
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<script type="text/javascript"
- 		 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 		<script type="text/javascript">
  			 emailjs.init('KKjF-Q74HBdMbBVdY')
 		</script>
 	</head>
 	<body>
 		<slot />
-		<script src="../libs/Effects.ts"></script>
+		<script type="text/javascript"
+ 		 src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		<script>
+			import AOS from 'aos'
+			AOS.init();
+		</script>
+		  
+		 <script src="../libs/Effects.ts"></script>
 	</body>
 </html>

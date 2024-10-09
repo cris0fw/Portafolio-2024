@@ -6,7 +6,6 @@ const header = document.getElementById("navbar");
 const sections = document.querySelectorAll<HTMLElement>("section");
 const scrollUpBtn = document.getElementById("scroll-up");
 let lastScrollY = window.scrollY;
-import ScrollReveal from "scrollreveal";
 
 // Función para cerrar el menú
 const closeMenu = () => {
@@ -34,7 +33,14 @@ hamburguer?.addEventListener("click", () => {
 
 // Evento para cerrar el menú cuando se hace clic en un enlace
 navLinks.forEach((navLink) => {
-  navLink.addEventListener("click", () => {
+  navLink.addEventListener("click", (e) => {
+    // Elimina la clase 'active' de todos los enlaces
+    navLinks.forEach((link) => link.classList.remove("active"));
+
+    // Agrega la clase 'active' al enlace que se ha hecho clic
+    (e.target as HTMLElement).classList.add("active");
+
+    // Cierra el menú
     closeMenu();
   });
 });
@@ -84,15 +90,3 @@ const observer = new IntersectionObserver(
 sections.forEach((section) => {
   observer.observe(section);
 });
-
-const sr = ScrollReveal({
-  origin: "top",
-  distance: "60px",
-  duration: 2500,
-  delay: 300,
-  reset: true,
-});
-
-sr.reveal(".home__data, .proyecto__section");
-sr.reveal(".home__image", { delay: 500, scale: 0.5 });
-sr.reveal(".proyecto__card", { interval: 100 });

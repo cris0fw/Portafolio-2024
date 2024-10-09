@@ -2,11 +2,17 @@ import React from "react";
 import type { CardProyectsProps } from "../types/index";
 
 const CardProyecto = (props: CardProyectsProps) => {
-  const { card } = props;
+  const { card, index } = props;
   const { image, title, description, iconos } = card;
 
   return (
-    <div className="proyecto__card w-full max-w-[380px] flex flex-col items-center justify-center bg-black border-solid border-[2px] border-main_celeste rounded-[8px] py-[35px] px-[5px] gap-[7px] text-center cursor-pointer shadow-cardShadow transition duration-300 md:max-w-[100%] mt-10 lg:hover:scale-[1.05] hover:scale-[1] hover:shadow-iconos">
+    <div
+      data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-duration="1200"
+      data-aos-delay={`${index * 150}`}
+      className="proyecto__card w-full max-w-[380px] flex flex-col items-center justify-center bg-black border-solid border-[2px] border-main_celeste rounded-[8px] py-[35px] px-[5px] gap-[7px] text-center cursor-pointer shadow-cardShadow transition duration-300 md:max-w-[100%] mt-10 lg:hover:scale-[1.05] hover:scale-[1] hover:shadow-iconos"
+    >
       <img
         className="w-full max-w-[280px] h-auto rounded-[6px] object-cover"
         src={`/portafolio-2024/${image}`}
@@ -21,11 +27,10 @@ const CardProyecto = (props: CardProyectsProps) => {
 
       <div className="flex flex-wrap justify-center gap-4 mt-3">
         {iconos.map((icon, index) => (
-          <div className="p-2 bg-white rounded-full">
+          <div key={index} className="p-2 bg-white rounded-full">
             <img
               src={`/portafolio-2024/${icon}`}
               className="w-6 h-6"
-              key={index}
               alt={`icono tecnología ${index + 1}`}
             />
           </div>

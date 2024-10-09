@@ -25,6 +25,7 @@ export interface ProyectosType {
 
 export interface CardProyectsProps {
   card: ProyectosType;
+  index: number;
 }
 
 export interface ContainerFiltersBotones {

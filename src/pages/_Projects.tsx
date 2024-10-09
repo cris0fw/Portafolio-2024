@@ -3,17 +3,17 @@ import CardProyecto from "../components/_CardProyecto";
 import { CardsProyectos } from "../libs/Proyectos";
 import type { ProyectosType } from "../types/index";
 import ContainerFiltrosBotones from "../components/_ContainerFiltrosBotones";
-import BotonesPaginacion from "../components/_BotonesPaginacion";
-import ScrollReveal from "scrollreveal";
 
 const Projects = () => {
   const [filtered, setFiltered] = useState<ProyectosType[]>(CardsProyectos);
   const [currentProyects, setCurrentProyects] = useState<ProyectosType[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
-
   const sectionRef = useRef<HTMLDivElement>(null);
-
   const limit = 6;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => {
@@ -22,27 +22,19 @@ const Projects = () => {
     });
   };
 
-  const handleBackPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => {
+      const newPage = Math.max(prevPage - 1, 0);
+      sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+      return newPage;
+    });
   };
 
   useEffect(() => {
     const startIndex = currentPage * limit;
     const endIndex = startIndex + limit;
-    setCurrentProyects(filtered.slice(startIndex, endIndex));
-
-    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    setCurrentProyects(filtered.slice(0, endIndex));
   }, [currentPage, filtered]);
-
-  const sr = ScrollReveal({
-    origin: "top",
-    distance: "60px",
-    duration: 2500,
-    delay: 300,
-    reset: true,
-  });
-
-  sr.reveal(".proyecto__section");
 
   return (
     <section
@@ -50,7 +42,11 @@ const Projects = () => {
       id="proyectos"
       className="px-6 py-20 lg:px-0 bg-bg_negro"
     >
-      <h2 className="font-semibold text-center proyecto__section subtitle">
+      <h2
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        className="font-semibold text-center proyecto__section subtitle"
+      >
         Proy
         <span className="bg-gradient-to-r from-main_celeste to-[#0057a0] bg-clip-text text-transparent">
           ectos
@@ -68,15 +64,29 @@ const Projects = () => {
           )}
 
           {currentProyects.length > 0 &&
-            currentProyects.map((pro) => (
-              <CardProyecto key={pro.id} card={pro} />
+            currentProyects.map((pro, index) => (
+              <CardProyecto key={pro.id} card={pro} index={index} />
             ))}
         </div>
 
-        <BotonesPaginacion
-          handleNextPage={handleNextPage}
-          handleBackPage={handleBackPage}
-        />
+        <div className="flex justify-center mt-5">
+          {currentPage > 0 && (
+            <button
+              onClick={handlePreviousPage}
+              className="px-4 py-2 mx-2 text-white bg-red-500 rounded"
+            >
+              Cargar Menos
+            </button>
+          )}
+          {currentProyects.length < filtered.length && (
+            <button
+              onClick={handleNextPage}
+              className="px-4 py-2 mx-2 text-white bg-blue-500 rounded"
+            >
+              Cargar Más
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );
