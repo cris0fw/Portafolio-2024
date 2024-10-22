@@ -21,6 +21,7 @@ export interface ProyectosType {
   image: string;
   iconos: string[];
   filter: string;
+  pagina?: string;
 }
 
 export interface CardProyectsProps {

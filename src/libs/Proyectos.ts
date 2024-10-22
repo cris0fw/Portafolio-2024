@@ -16,6 +16,7 @@ export const CardsProyectos = [
       "/tecnologys/mongodb.svg",
     ],
     filter: "reactjs",
+    pagina: "/",
   },
   {
     id: 2,
@@ -33,6 +34,7 @@ export const CardsProyectos = [
       "tecnologys/mongodb.svg",
     ],
     filter: "reactjs",
+    pagina: "https://github.com/cris0fw/clon-netflix-frontend",
   },
   {
     id: 3,
@@ -49,6 +51,7 @@ export const CardsProyectos = [
       "/tecnologys/postgresql.svg",
     ],
     filter: "nextjs",
+    pagina: "/https://github.com/cris0fw/coffe-ecommerce-frontend",
   },
   {
     id: 4,
@@ -67,6 +70,7 @@ export const CardsProyectos = [
       "/tecnologys/mongodb.svg",
     ],
     filter: "reactjs",
+    pagina: "https://github.com/cris0fw/Tienda-electronica-panel-admin",
   },
   {
     id: 5,
@@ -77,6 +81,7 @@ export const CardsProyectos = [
     image: "/proyectos/proyecto5.png",
     iconos: ["/wordpress.svg", "/tecnologys/css.svg", "/tecnologys/mysql.svg"],
     filter: "wordpress",
+    pagina: "https://suskill.com/",
   },
   {
     id: 6,
@@ -92,6 +97,7 @@ export const CardsProyectos = [
       "/tecnologys/postgresql.svg",
     ],
     filter: "reactjs",
+    pagina: "/",
   },
   {
     id: 7,
@@ -108,6 +114,7 @@ export const CardsProyectos = [
       "/tecnologys/mongodb.svg",
     ],
     filter: "nextjs",
+    pagina: "/https://github.com/cris0fw/Order-food-frontend",
   },
   {
     id: 8,
@@ -124,6 +131,7 @@ export const CardsProyectos = [
       "/tecnologys/tailwindcss.svg",
     ],
     filter: "vuejs",
+    pagina: "https://github.com/cris0fw/short-url-frontend-vue-js-mevn",
   },
   {
     id: 9,
@@ -139,5 +147,21 @@ export const CardsProyectos = [
       "/tecnologys/tailwindcss.svg",
     ],
     filter: "nextjs",
+    pagina: "https://github.com/cris0fw/rentar-car-next-js-prisma",
+  },
+  {
+    id: 10,
+    title: "Pokedex siteweb",
+    description: `En esta pagina podras ver un listado de pokemons de la primer 
+    temporada, podras filtrar por su tipo y ver la informacion que contiene de cada 
+    pokemon `,
+    image: "/proyectos/proyecto10.png",
+    iconos: [
+      "/vue-9.svg",
+      "/tecnologys/typescript.svg",
+      "/tecnologys/tailwindcss.svg",
+    ],
+    filter: "vuejs",
+    pagina: "https://cris0fw.github.io/site-pokedex/#/",
   },
 ];
