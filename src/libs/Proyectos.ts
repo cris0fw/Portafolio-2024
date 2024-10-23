@@ -51,7 +51,7 @@ export const CardsProyectos = [
       "/tecnologys/postgresql.svg",
     ],
     filter: "nextjs",
-    pagina: "/https://github.com/cris0fw/coffe-ecommerce-frontend",
+    pagina: "https://github.com/cris0fw/coffe-ecommerce-frontend",
   },
   {
     id: 4,
@@ -114,7 +114,7 @@ export const CardsProyectos = [
       "/tecnologys/mongodb.svg",
     ],
     filter: "nextjs",
-    pagina: "/https://github.com/cris0fw/Order-food-frontend",
+    pagina: "https://github.com/cris0fw/Order-food-frontend",
   },
   {
     id: 8,
