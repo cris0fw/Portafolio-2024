@@ -3,7 +3,7 @@ import type { CardProyectsProps } from "../types/index";
 
 const CardProyecto = (props: CardProyectsProps) => {
   const { card, index } = props;
-  const { image, title, description, iconos } = card;
+  const { image, title, description, iconos, pagina } = card;
 
   return (
     <div
@@ -38,7 +38,8 @@ const CardProyecto = (props: CardProyectsProps) => {
       </div>
 
       <a
-        href="#"
+        href={pagina}
+        target="_blank"
         className="w-[75%] px-3 py-2 bg-main_celeste rounded-[6px] mt-5 transition duration-300 hover:bg-black hover:border-solid hover:border-[2px] hover:border-main_celeste hover:text-main_celeste"
       >
         Ver proyecto
