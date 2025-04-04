@@ -169,7 +169,7 @@ export const CardsProyectos = [
     title: "Grocery app",
     description:
       "Este proyecto es una tienda en línea de comestibles con un diseño moderno y funcional. Cuenta con un sistema de categorías para facilitar la navegación, una barra de búsqueda para encontrar productos rápidamente y una sección de ofertas destacadas. Incluye autenticación de usuario y carrito de compras, proporcionando una experiencia intuitiva para los clientes.",
-    image: "/public/proyectos/proyecto11.png",
+    image: "/proyectos/proyecto11.png",
     iconos: [
       "/next-js.svg",
       "/react-2.svg",
